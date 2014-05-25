@@ -1,0 +1,37 @@
+decl
+integer g(integer a);
+integer f(integer b);
+integer temp,q;
+enddecl
+integer g(integer a){
+decl
+enddecl
+if (a == 1) then 
+temp = 1;
+else 
+temp = a-1;
+endif;
+return temp;
+}
+
+integer f(integer b){
+decl
+enddecl
+if (b == 50) then 
+temp = 50;
+else 
+temp = b+1;
+endif;
+return temp;
+}
+
+integer main(){
+decl
+enddecl
+begin
+q = ITER(f(g(50)));
+write(q);
+q = ITER(g(f(50)));
+write(q);
+end
+}

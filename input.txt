@@ -1,0 +1,45 @@
+decl
+	integer gcd(integer &x,&y,a,b);
+	integer alpha, beta;  
+enddecl
+integer gcd(integer &x, &y, a, b){
+	decl
+		integer rem,q,u,v;
+	enddecl
+		if (!(b==0)) then
+			if (a-(b*(a/b))==0) then
+				alpha=0;
+				beta =1;
+				u=b;
+			else
+				q=a/b;
+				rem=(a-(b*(a/b)));
+				u = gcd(alpha,beta,b,rem);
+				v=alpha;
+				alpha=beta;
+				beta=v-beta*q;
+				
+			endif;
+		else
+	
+			alpha=1;
+			beta =0;
+			u=a;
+			
+		endif;
+		return(u);
+}
+integer main(){
+	decl
+		integer a, b, x, y, g;
+		
+	enddecl
+	begin
+		read(a);
+		read(b);
+		g=gcd(alpha,beta,a,b);
+		write(g);
+		write(alpha);
+		write(beta);  
+	end
+}

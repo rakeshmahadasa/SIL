@@ -1,0 +1,32 @@
+decl
+integer a(integer s),fact(integer g, w),q,n,i;
+enddecl
+integer fact(integer g,w){
+decl
+integer retval;
+enddecl
+
+write(g);
+write(w);
+retval=1;
+if(g>=10) then retval=10; else retval = g+1; endif;
+return retval;
+}
+integer a(integer s){
+decl
+integer f;
+enddecl
+write(1);
+return f;
+}
+integer main(){
+decl
+enddecl
+begin
+read(n);
+i=2;
+q = ITER(fact(n,6));
+write(q+5); 
+write(i);
+end
+}

@@ -1,0 +1,3237 @@
+decl
+integer A[2], func(integer &a);
+enddecl
+
+integer func(integer &a){
+
+decl
+enddecl
+
+a = a + 1;
+
+return 0;
+
+}
+
+integer main(){
+decl
+integer z;
+enddecl
+
+begin
+
+A[0] = 2;
+A[1] = 5;
+
+z = func(A[1]);
+write(A[1]);
+
+end
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer a, b, sum (integer x, &y);
+enddecl
+
+integer sum(integer x, &y) 
+{
+
+decl
+enddecl
+
+x = x+1;
+y = y+1 ;
+
+return x + y;
+}
+
+integer main(){
+decl
+integer m, n, q;
+boolean x;
+enddecl
+
+begin
+
+m = 1;
+n = 2;
+q = sum( m, n);
+
+write(m);
+write(n);
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer PARTITION(integer p, r);
+integer QUICKSORT(integer p, r);
+integer A[100];
+
+integer z;
+
+enddecl
+
+
+integer PARTITION(integer p, r) {
+
+decl
+
+integer i, j, x, temp;
+
+enddecl
+
+x = A[r];
+
+i = p-1;
+
+j = p;
+
+while(j <= (r-1)) do
+	
+	if( A[j] <= x )
+	then
+		i = i+1;
+		temp =  A[i];
+		A[i] = A[j];
+		A[j] = temp;
+	else
+	endif;			
+
+	j = j+1;
+
+endwhile;
+
+
+temp =  A[i+1];
+A[i+1] = A[r];
+A[r] = temp;
+
+
+
+
+return (i+1);
+
+}
+
+
+
+integer QUICKSORT(integer p, r){
+
+decl
+integer q;
+enddecl
+
+if (p<r)
+then
+	q = PARTITION(p, r);
+	z = QUICKSORT(p, q-1);	
+	z = QUICKSORT(q+1, r);
+
+else
+
+endif;
+
+return 0;
+
+}
+
+
+
+
+integer main(){
+
+decl
+integer i, num;
+enddecl
+
+begin
+
+read(num);
+
+i=0;
+
+while(i<num)
+do
+	read(A[i]);
+	i = i+1;
+endwhile;
+
+
+z = QUICKSORT(0, num-1);
+
+
+i=0;
+while(i<num)
+do
+	write(A[i]);
+	i = i+1;
+endwhile;
+
+
+
+
+
+
+
+end
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer perm (integer j), z, A[100], n;
+enddecl
+
+
+integer perm (integer j){
+
+decl
+
+integer temp, i;
+
+enddecl
+
+
+if(j==0)
+then
+	i = 0;
+	while(i<n)
+	do
+		write( A[i] );
+		i = i+1;
+	endwhile;
+	
+	write(1000);
+	
+else
+	i=0;
+	z = perm(j-1);
+	while(i<j)
+	do
+		temp = A[i];
+		A[i] = A[j];
+		A[j] = temp;
+		
+	    	z = perm(j-1);
+		
+		temp = A[i];
+		A[i] = A[j];
+		A[j] = temp;
+	i = i+1;
+	
+	endwhile;
+	
+endif;		
+	 
+return 0;
+
+}	
+
+
+integer main(){
+
+decl
+integer i;
+enddecl
+
+begin
+
+read(n);
+
+i=0;
+
+while(i<n)
+do
+	read(A[i]);
+	i = i+1;
+endwhile;
+
+
+z = perm(n-1);
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer f(integer x);
+
+
+
+
+enddecl
+
+
+integer f(integer x){
+
+decl
+integer val;
+enddecl
+
+if(x >= 91)
+then
+	val = 91;
+else
+	val = f ( f(x + 11) );	
+endif;
+
+return val;
+
+}
+
+
+integer main(){
+
+decl
+integer num;
+enddecl
+
+begin
+
+read(num);
+
+write( f(num) );
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer PARTITION(integer p, r);
+integer QUICKSORT(integer p, r);
+integer A[100];
+
+integer z;
+
+enddecl
+
+
+integer PARTITION(integer p, r) {
+
+decl
+
+integer i, j, x, temp;
+
+enddecl
+
+x = A[r];
+
+i = p-1;
+
+j = p;
+
+while(j <= (r-1)) do
+	
+	if( A[j] <= x )
+	then
+		i = i+1;
+		temp =  A[i];
+		A[i] = A[j];
+		A[j] = temp;
+	else
+	endif;			
+
+	j = j+1;
+
+endwhile;
+
+
+temp =  A[i+1];
+A[i+1] = A[r];
+A[r] = temp;
+
+
+
+
+return (i+1);
+
+}
+
+
+
+integer QUICKSORT(integer p, r){
+
+decl
+integer q;
+enddecl
+
+if (p<r)
+then
+	q = PARTITION(p, r);
+	z = QUICKSORT(p, q-1);	
+	z = QUICKSORT(q+1, r);
+
+else
+
+endif;
+
+return 0;
+
+}
+
+
+
+
+integer main(){
+
+decl
+integer i, num;
+enddecl
+
+begin
+
+read(num);
+
+i=0;
+
+while(i<num)
+do
+	read(A[i]);
+	i = i+1;
+endwhile;
+
+
+z = QUICKSORT(0, num-1);
+
+
+i=0;
+while(i<num)
+do
+	write(A[i]);
+	i = i+1;
+endwhile;
+
+
+
+
+
+
+
+end
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer A[100], SUM(integer a, b), findSmall(integer beg, last), selectionSort(integer beg, );
+
+enddecl
+
+
+
+integer findSmall(integer beg, last){
+
+decl
+integer i, pos;
+enddecl
+
+i = beg;
+pos = i;
+
+while(i<=last) do
+	if(A[i] < A[pos])
+	then 
+		pos = i;
+	else
+	endif;
+	
+	i = i + 1;
+				
+endwhile;
+
+return pos;
+
+
+
+
+}
+
+
+
+
+
+
+
+integer SUM(integer a, b){
+decl
+integer i, val;
+enddecl
+
+i = a; 
+val = 0;
+
+while ( i<=b) do
+	val = val + A[i];
+	i = i + 1;	
+endwhile;
+
+return val;
+
+}
+
+
+		
+
+integer main(){
+decl
+integer i, num;
+enddecl
+
+begin
+
+read(num);
+
+i=0;
+
+while(i<num)
+do
+	read(A[i]);
+	i = i+1;
+endwhile;
+
+
+
+write(A[findSmall(0, num-1)]);
+	
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer A[100];
+integer findsmall(integer beg; integer end);
+
+enddecl
+
+integer findsmall(integer beg; integer end){
+
+decl
+integer i, pos;
+enddecl
+
+i = beg;
+pos = i;
+
+while(i<=end) do
+	if(A[i] < A[pos])
+	then 
+		pos = i;
+	else
+	endif;
+	
+	i = i + 1;
+				
+endwhile;
+
+return pos;
+
+}
+		
+
+integer main(){
+decl
+enddecl
+
+begin
+
+A[0] = 3;
+A[1] = 2;
+A[2] = 8;
+A[3] = 1;
+A[4] = 9;
+
+write(A[findsmall(0, 4)]);
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num);
+
+
+enddecl
+
+integer fact(integer num){
+
+decl 
+integer f;
+enddecl
+
+if(num < 0)
+then 
+	f = 0;
+else	
+
+	if(num == 0)
+	then
+		f = 1;
+	else
+		f = num * fact(num-1);
+	endif;
+endif;
+
+return f;
+}
+
+
+integer main(){
+decl
+integer num;
+enddecl
+
+begin
+read(num);
+
+write(fact(num));
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num);
+
+
+enddecl
+
+integer fact(integer num){
+
+decl 
+integer f;
+enddecl
+
+if(num <= 1)
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+return f;
+}
+
+integer main(){
+decl
+
+integer num, i; 
+boolean b;
+
+
+enddecl
+
+begin
+
+b=true;
+i=0;
+
+read(num);
+
+while(i<=num)  do
+
+if(b)
+then
+write(fact(i));
+else
+write(0);
+endif;
+
+
+i=i+1;
+b = !b;
+endwhile;
+
+end
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+boolean b;
+integer  i;
+enddecl
+
+
+integer main(){
+decl
+enddecl
+
+begin
+b=true;
+i=0;
+
+while(i<=6 ) do
+
+if(b)
+then
+write(1);
+else
+endif;
+
+i=i+1;
+
+b = !b;
+
+endwhile;
+
+
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num);
+
+
+enddecl
+
+integer fact(integer num){
+
+decl 
+integer f;
+enddecl
+
+if(num <= 1)
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+return f;
+}
+
+integer main(){
+decl
+
+integer num, i; 
+boolean b;
+
+
+enddecl
+
+begin
+
+b=true;
+i=0;
+
+read(num);
+
+while((b) && (i<=num) ) do
+
+write(fact(i));
+i=i+1;
+b = !b;
+endwhile;
+
+end
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num);
+enddecl
+
+integer fact(integer num){
+
+decl 
+integer f;
+enddecl
+
+if(num <= 1)
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+return f;
+}
+
+
+integer main(){
+decl
+integer num, i, c; 
+boolean b;
+enddecl
+
+begin
+
+
+i=0;
+
+num = 9;
+
+while((i<=num)) do
+
+write(fact(i));
+i=i+1;
+
+endwhile;
+
+end
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer A();
+
+enddecl
+
+
+integer A(){
+decl
+
+enddecl
+
+write(0);
+
+return A();
+
+
+}
+
+
+integer main(){
+
+decl
+
+integer a;
+
+enddecl
+
+begin
+
+
+a = A();
+
+ 
+
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer A();
+
+enddecl
+
+
+integer A(){
+decl
+
+enddecl
+
+write(0);
+
+return A();
+
+
+}
+
+
+integer main(){
+
+decl
+
+integer a;
+
+enddecl
+
+begin
+
+
+a = A();
+
+ 
+
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num), n;
+enddecl
+
+
+integer fact(integer num){
+decl
+integer f;
+enddecl
+
+
+
+if(num <= 1 ) 
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+
+write(num);
+
+return f;
+
+}	 	 
+
+integer main()
+{
+decl
+enddecl
+
+begin
+
+
+read(n);
+
+write(fact(n));
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer square(integer x), cube(integer x), sumsc(integer x);
+enddecl
+
+integer square(integer x){
+decl
+enddecl
+
+
+return x*x;
+
+}
+
+
+integer cube(integer x){
+decl
+enddecl
+
+
+return x*x*x;
+
+}
+
+
+integer sumsc(integer x){
+decl
+enddecl
+
+
+return square(x)+cube(x);
+
+}
+
+
+
+integer main()
+{
+decl enddecl
+
+begin
+
+write(sumsc(4));
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+boolean printeven(integer num; boolean flag);
+
+
+
+enddecl
+
+
+boolean printeven(integer num; boolean flag){
+
+decl
+
+boolean a;
+
+enddecl
+
+
+
+
+if(flag)
+then
+	flag = false;
+else
+	flag = true;
+endif;		
+
+
+if( num > 0)
+then
+
+
+a = printeven(num-1, flag);
+
+write(num);
+
+else
+a = true;
+
+
+endif;
+	
+
+
+
+
+	  
+return (1<2);
+
+}
+
+
+integer main() {
+
+
+decl
+boolean b;
+integer n;
+
+
+enddecl
+
+begin
+
+read(n);
+
+b = printeven(n, true);
+
+
+end
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+enddecl
+
+integer main(){
+decl
+integer a;
+enddecl
+
+begin
+
+read(a);
+write(1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + ( 7 + ( 8 + 9 + a) ) ) ) ) ) ) );
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer A();
+
+enddecl
+
+
+integer A(){
+decl
+
+enddecl
+
+write(0);
+
+return A();
+
+
+}
+
+
+integer main(){
+
+decl
+
+integer a;
+
+enddecl
+
+begin
+
+
+a = A();
+
+ 
+
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+boolean A();
+
+enddecl
+
+
+boolean A(){
+decl
+boolean x;
+
+enddecl
+
+write(0);
+
+x = A();
+
+return true;
+
+
+}
+
+
+integer main(){
+
+decl
+
+boolean a;
+
+enddecl
+
+begin
+
+
+a = A();
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+enddecl
+
+integer main()
+{
+decl
+boolean a, b, c;
+integer x, y, z;
+enddecl
+
+begin
+
+end
+
+
+}
+
+
+
+
+
+
+
+
+
+
+decl
+enddecl
+
+integer main(){
+decl
+integer a;
+enddecl
+
+begin
+
+read(a);
+write(1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + ( 7 + ( 8 + 9 + a) ) ) ) ) ) ) );
+
+end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num), n;
+enddecl
+
+
+integer fact(integer num){
+decl
+integer f;
+enddecl
+
+
+
+if(num <= 1 ) 
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+
+write(num);
+
+return f;
+
+}	 	 
+
+
+begin
+
+
+read(n);
+
+write(fact(n));
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fib ( integer n), i, n;
+enddecl
+
+integer fib ( integer n){
+decl
+
+integer f, first, second, i;
+
+enddecl
+
+first = 0;
+second = 1;
+
+
+if( n==1)
+then
+	f = 0;
+else if(n==2)
+     then
+     		f=1; 		
+     else
+     	i=3;	
+		
+	while ( i <= n ) do
+		f = first + second;
+		first = second;
+		second=f;
+		i=i+1;
+	endwhile;
+     endif;
+endif;      			
+		
+
+ 
+return f;
+
+}
+
+
+begin
+i=1;
+
+read(n);
+
+while(i<=n) do
+	write(fib(i));
+	i=i+1;
+endwhile;
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact(integer num),i, n;
+enddecl
+
+
+integer fact(integer num){
+decl
+integer f;
+enddecl
+
+
+
+if(num <= 1 ) 
+then
+	f = 1;
+else
+	f = num * fact(num-1);
+endif;
+
+return f;
+
+}	 	 
+
+
+begin
+
+i=0;
+
+read(n);
+
+while(i<=n)
+do
+write(fact(i));
+i=i+1;
+endwhile;
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer num, i;
+integer fib ( integer n);
+enddecl
+
+
+integer fib ( integer n){
+decl
+
+integer f;
+
+enddecl
+
+if ( n == 1) then f = 0; else  if ( n == 2) then f=1; else f = fib(n-1) + fib(n-2); endif; endif;
+ 
+return f;
+
+}
+
+
+
+
+ 
+begin
+
+
+i=0;
+read(num);
+
+
+while(i<=10) do
+write( fib(i));
+
+i=i+1;
+
+endwhile;
+
+
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fib ( integer n), i, num;
+enddecl
+
+integer fib ( integer n){
+decl
+
+integer f;
+
+enddecl
+
+if ( n == 1) then f = 0; else  if ( n == 2) then f=1; else f = fib(n-1) + fib(n-2); endif; endif;
+ 
+return f;
+
+}
+
+
+begin
+
+i=1;
+
+read(num);
+
+write(num);
+
+while(i<=num) do
+
+write(fib(i));
+
+i = i+1;
+endwhile;
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer pr(integer n);
+integer num ;
+
+enddecl
+
+integer pr( integer n){
+decl
+integer i;
+enddecl
+
+i=0;
+
+while(i<=n) do
+write(i);
+i=i+1;
+endwhile;
+
+return 0;
+}
+
+
+begin
+read(num);
+
+num = pr(num);
+write(0);
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fib ( integer n);
+enddecl
+
+integer fib ( integer n){
+decl
+
+integer f, first, second, third;
+
+enddecl
+
+first = 0;
+second = 1;
+
+third = first + second;
+
+while ( third <= n ) do
+third = first + secound
+
+
+ 
+return f;
+
+}
+
+
+begin
+
+write(fib(8));
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fib ( integer n);
+enddecl
+
+integer fib ( integer n){
+decl
+
+integer f;
+
+enddecl
+
+if ( n == 1) then f = 0; else  if ( n == 2) then f=1; else f = fib(n-1) + fib(n-2); endif; endif;
+ 
+return f;
+
+}
+
+
+begin
+
+write(fib(8));
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact( integer n );
+enddecl
+
+integer fact( integer n ){
+
+decl
+integer a;
+enddecl
+
+if ( n == 1 )
+then a = 1;
+else a = n * (fact (n-1));
+endif;
+
+return a;
+
+}
+
+begin
+write( 1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + ( 7 + ( 8 +  fact(fact(3))) ) ) ) ) ) ) ) ;
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer sum( integer x, y );
+enddecl
+
+integer sum( integer x, y ){
+
+decl
+
+enddecl
+
+
+return x+y;
+
+}
+
+begin
+write( 1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + (7 + (  sum(2,9)) ) ) ) ) ) )) ;
+end 
+
+
+
+
+
+
+decl
+integer fact( integer n );
+enddecl
+
+integer fact( integer n ){
+
+decl
+integer a;
+enddecl
+
+if ( n == 1 )
+then a = 1;
+else a = n * (fact (n-1));
+endif;
+
+return a;
+
+}
+
+begin
+write( 1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + ( 7 + ( 8 +  fact(5)) ) ) ) ) ) ) ) ;
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact( integer n );
+enddecl
+
+integer fact( integer n ){
+
+decl
+integer a;
+enddecl
+
+if ( n == 1 )
+then a = 1;
+else a = n * (fact (n-1));
+endif;
+
+return a;
+
+}
+
+begin
+write(  fact(5))  ;
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer fact( integer n );
+enddecl
+
+integer fact( integer n ){
+
+decl
+integer a;
+enddecl
+
+if ( n == 1 )
+then a = 1;
+else a = n * (fact (n-1));
+endif;
+
+return a;
+
+}
+
+begin
+write( 1 + ( 2 + ( 3 + ( 4 + ( 5 + ( 6 + ( 7 + ( 8 +  fact(5)) ) ) ) ) ) ) ) ;
+end 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer sum(integer x, y, m, n), a, b;
+enddecl
+
+integer sum(integer x, y, m, n){
+decl
+enddecl
+
+return (x + y + m + n);
+}
+
+begin
+
+write(sum(2+8, 3+7, 7, 7));
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer sum( integer a, b, c), a;
+enddecl
+
+integer sum(integer a, b, c){
+decl enddecl
+
+a = 1 ;
+b=2;
+c=3;
+return (a + b + c);
+
+}
+
+begin
+
+a = sum(2, 4, 6);
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer sum( integer a, b), a;
+enddecl
+
+integer sum(integer a, b){
+decl enddecl
+
+return (a + b);
+
+}
+
+begin
+
+a = sum(2, 4);
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer sumsquare, a, b;
+integer SUMSQUARE(integer x, y);
+enddecl
+
+integer SUMSQUARE(integer x, y){
+decl
+integer m, n;
+enddecl
+
+m = x * x;
+n = y * y;
+
+return (x+y);
+
+}
+
+begin
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+boolean or(boolean x, y), a;
+
+enddecl
+
+boolean or(boolean x, y){
+decl
+enddecl
+
+x = y || (2 < 4);
+
+
+}
+
+
+begin
+
+a = or(1<6,2<1);
+
+end
+
+
+
+
+
+
+
+
+decl
+integer or(integer x, y);
+
+enddecl
+
+integer or(integer x, y){
+decl
+enddecl
+
+x = y;
+
+}
+
+
+begin
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer a;
+integer sum(integer x, y); 
+boolean b;
+enddecl
+
+integer sum(integer x,y){
+decl
+enddecl
+
+a = x + y;
+
+}
+
+begin
+
+b =  (1<7) || (sum(1,2)<8);
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer summ( integer a, b );
+integer prodd( integer a, b );
+
+enddecl
+
+integer summ( integer a, b)
+{
+decl
+integer sum;
+enddecl
+
+
+sum = a + b;
+
+
+}
+
+
+
+integer prodd( integer a, b)
+{
+decl
+integer prod;
+enddecl
+
+
+prod = a * b;
+
+
+}
+
+
+
+
+begin
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer A();
+enddecl
+
+integer A()
+{
+decl
+enddecl
+
+
+}
+
+begin
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer op( integer a, b );
+
+enddecl
+
+integer op( integer a, b)
+{
+decl
+integer sum, product, div, dif;
+enddecl
+
+
+sum = a + b;
+product = a * b;
+div = a / b;
+dif = a - b;
+
+
+}
+
+
+begin
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+integer op( integer a, b );
+
+enddecl
+
+integer op( integer a, b)
+{
+decl
+integer sum;
+enddecl
+
+
+sum = a + b;
+
+
+}
+
+
+begin
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+
+integer xrt(integer m, n );
+
+integer xt(integer ma ; boolean xa), xlrt(), xrtt(integer m, n ; boolean x, y);
+
+
+
+
+enddecl
+
+
+
+
+
+integer xrt (integer m, n )
+{
+
+m=7;
+
+
+}
+
+
+
+integer xt (integer ma ; boolean xa)
+{
+}
+
+
+integer xlrt()
+{
+}
+
+
+integer xrtt (integer m, n ; boolean x, y)
+{
+}
+
+
+
+
+
+
+
+
+begin
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+
+
+integer xrt(integer m, n ; boolean x, y);
+integer xt(integer ma, na ; boolean xa, ya), xlrt(), xrtt(integer m, n ; boolean x, y);
+
+
+enddecl
+
+integer xrt (integer m, n ; boolean x, y)
+{
+}
+
+integer xt (integer ma, na ; boolean xa, ya)
+{
+}
+
+
+integer xlrt()
+{
+}
+
+
+integer xrtt (integer m, n ; boolean x, y)
+{
+}
+
+
+
+begin
+
+
+end
+
+
+
+
+
+
+
+
+
+
+decl
+integer a[20],i,n,p,ptr,temp;
+enddecl
+
+begin
+
+read(n);
+i=1;
+while(i <= n) do read(a[i]); i=i+1; endwhile;
+
+
+p=1;
+
+
+
+while(p<=n) 
+do 
+temp=1;
+while(temp<=n-1) 
+do 
+if( a[temp]> a[temp+1] ) then
+ptr=a[temp+1];
+a[temp+1]=a[temp];
+a[temp]=ptr;
+else
+endif;
+temp=temp+1;
+endwhile; 
+p=p+1;
+endwhile;
+
+
+
+
+i=1;
+while(i <= n) do write(a[i]); i=i+1; endwhile;
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer a[100],i,n,p,ptr,temp;
+enddecl
+
+begin
+
+read(n);
+i=1;
+while(i <= n) do read(a[i]); i=i+1; endwhile;
+
+p=1;
+
+while(p<=n) 
+do 
+temp=1;
+while(temp<=n-1) 
+do 
+if( a[temp]> a[temp+1] ) then
+ptr=a[temp+1];
+a[temp+1]=a[temp];
+a[temp]=ptr;
+else
+endif;
+temp=temp+1;
+endwhile; 
+p=p+1;
+endwhile;
+
+i=1;
+while(i <= n) do write(a[i]); i=i+1; endwhile;
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer a, b, c, d;
+enddecl
+
+begin
+
+read(a);
+read(b);
+c=10;
+d=7;
+if(a<b) then write(c); else write(d); endif;
+
+end
+
+
+
+
+
+
+
+
+
+decl
+
+integer sum, counter, array[10];
+
+enddecl
+
+begin
+
+counter = 0;
+
+sum = 0;
+
+while(counter<10)
+do
+
+read(array[counter]);
+sum = sum + array[counter];
+
+counter = counter + 1;
+endwhile;
+
+counter=0;
+
+while(counter<10)
+do
+write(array[counter]);
+counter=counter+1;
+endwhile;
+
+
+write(sum);
+
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer a, b, c, d;
+enddecl
+
+begin
+
+a=6;
+b=2;
+c=a-b;
+d=a/b;
+write(c);
+write(d);
+end
+
+
+
+
+
+decl
+boolean a, b;
+enddecl
+
+begin
+
+a=true&&false;
+b=true;
+
+
+if( (2<7)||(6>9) ) then write(0); else write(1); endif;
+
+end
+
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+decl
+integer counter, a[10];
+enddecl
+
+begin
+
+read ( a[4]);
+
+write(a[4]);
+
+end
+
+
+decl
+integer counter;
+enddecl
+
+begin
+read(counter);
+write(counter);
+end
+
+
+
+
+
+
+
+
+
+
+
